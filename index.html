@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡小江 | 资深HR总监 · 招聘战略专家</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a1628;
+            --primary-light: #1e3a5f;
+            --accent: #00d4aa;
+            --accent-light: #00f5c4;
+            --text: #2d3748;
+            --text-light: #718096;
+            --bg: #f7fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --gradient-1: #0a1628;
+            --gradient-2: #1e3a5f;
+            --gradient-accent: #00d4aa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* AI粒子背景动画 */
+        .ai-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .ai-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+        }
+
+        /* 头部区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 50%, #0f2847 100%);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 212, 170, 0.15);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent-light);
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 联系栏 */
+        .contact-bar {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 0;
+            margin-top: 40px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            width: 16px;
+        }
+
+        /* 主体布局 */
+        .main {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 32px;
+            padding: 40px 0;
+        }
+
+        /* 左侧边栏 */
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(0, 0, 0, 0.03);
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-title i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        /* AI技能评分 */
+        .skill-item {
+            margin-bottom: 18px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .skill-score {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 3px;
+            transition: width 1.5s ease-out;
+            width: 0;
+        }
+
+        .skill-bar.animate::after {
+            width: var(--width);
+        }
+
+        /* 标签云 */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(0, 212, 170, 0.05));
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--primary-light);
+        }
+
+        /* 数据指标卡片 */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .metric-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .metric-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.15), rgba(0, 212, 170, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .metric-unit {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* 内容区 */
+        .content-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* 个人简介 */
+        .about-text {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .about-text p {
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        .highlight-accent {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* 工作经历 */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--border));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.15);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .timeline-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .timeline-company {
+            font-size: 14px;
+            color: var(--primary-light);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .timeline-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .timeline-content {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .achievement-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.12), rgba(0, 212, 170, 0.05));
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--primary-light);
+            margin-top: 8px;
+        }
+
+        /* 项目经历 */
+        .project-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: rgba(0, 212, 170, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .project-role {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* 教育 */
+        .edu-item {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .edu-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .edu-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .edu-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .edu-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        /* 底部 */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-light);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .footer-link:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* AI脉冲装饰 */
+        .ai-pulse {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 212, 170, 0.2);
+            animation: pulse 3s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero-stats {
+                gap: 20px;
+            }
+            .stat-number {
+                font-size: 28px;
+            }
+            .contact-items {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-header {
+                flex-direction: column;
+            }
+        }
+
+        /* 打印样式 */
+        @media print {
+            .hero {
+                padding: 40px 0 30px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .ai-bg, .ai-pulse {
+                display: none;
+            }
+            .content-section, .sidebar-card {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            .main {
+                grid-template-columns: 240px 1fr;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- AI粒子背景 -->
+    <div class="ai-bg" id="aiBg"></div>
+
+    <!-- 头部 -->
+    <header class="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge animate-in">
+                    <i class="fas fa-robot"></i>
+                    <span>AI-Driven HR Strategist</span>
+                </div>
+                <h1 class="animate-in delay-1">胡小江</h1>
+                <p class="hero-subtitle animate-in delay-2">资深HR总监 · 招聘COE · 业务型HRBP</p>
+                <p style="color: rgba(255,255,255,0.7); font-size: 15px; max-width: 600px; line-height: 1.8;" class="animate-in delay-2">
+                    17年人力资源深耕经验，专注高科技、互联网、金融科技领域。擅长组织搭建、关键人才猎聘、招聘体系智能化运营，以数据驱动决策，助力业务高速增长。
+                </p>
+                <div class="hero-stats animate-in delay-3">
+                    <div class="stat-item">
+                        <div class="stat-number">17<span style="font-size:20px">+</span></div>
+                        <div class="stat-label">年经验</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3,300<span style="font-size:20px">+</span></div>
+                        <div class="stat-label">人才储备</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">200<span style="font-size:20px">+</span></div>
+                        <div class="stat-label">团队搭建</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20<span style="font-size:20px">+</span></div>
+                        <div class="stat-label">高端岗位</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>180 2876 6227</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>05050197@163.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-weixin"></i>
+                        <span>18028766227</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>上海 · 全国</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main">
+            <!-- 左侧栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-card animate-in">
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-brain"></i>
+                        核心能力
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">关键人才猎聘</span>
+                            <span class="skill-score">95%</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 95%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">组织架构设计</span>
+                            <span class="skill-score">92%</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 92%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">人才Mapping</span>
+                            <span class="skill-score">90%</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 90%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HRBP业务协同</span>
+                            <span class="skill-score">88%</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 88%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">招聘体系运营</span>
+                            <span class="skill-score">90%</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 90%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">数据驱动决策</span>
+                            <span class="skill-score">85%</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card animate-in delay-1">
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-microchip"></i>
+                        专业领域
+                    </h3>
+                    <div class="tag-cloud">
+                        <span class="tag">互联网</span>
+                        <span class="tag">高科技</span>
+                        <span class="tag">金融科技</span>
+                        <span class="tag">AI/算法</span>
+                        <span class="tag">Java架构</span>
+                        <span class="tag">产品研发</span>
+                        <span class="tag">无人机</span>
+                        <span class="tag">机器人</span>
+                        <span class="tag">平台化转型</span>
+                        <span class="tag">组织重构</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card animate-in delay-2">
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-tools"></i>
+                        工具与系统
+                    </h3>
+                    <div class="tag-cloud">
+                        <span class="tag">Moka ATS</span>
+                        <span class="tag">HRIS</span>
+                        <span class="tag">人才库系统</span>
+                        <span class="tag">数据分析</span>
+                        <span class="tag">Mapping工具</span>
+                        <span class="tag">AI招聘</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card animate-in delay-2">
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-language"></i>
+                        语言能力
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">英语</span>
+                            <span class="skill-score">熟练</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 75%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">普通话</span>
+                            <span class="skill-score">母语</span>
+                        </div>
+                        <div class="skill-bar" style="--width: 100%"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 主内容 -->
+            <div class="content">
+                <!-- 数据指标 -->
+                <div class="metrics-grid animate-in">
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-users"></i></div>
+                        <div class="metric-value">3,300<span class="metric-unit">+</span></div>
+                        <div class="metric-label">活跃人才库储备</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="metric-value">15<span class="metric-unit">%</span></div>
+                        <div class="metric-label">招聘成本优化</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="metric-value">20<span class="metric-unit">%</span></div>
+                        <div class="metric-label">招聘周期缩短</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-city"></i></div>
+                        <div class="metric-value">9<span class="metric-unit">城</span></div>
+                        <div class="metric-label">技术团队布局</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="metric-value">80<span class="metric-unit">x</span></div>
+                        <div class="metric-label">业务增长倍数</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="metric-value">1,900<span class="metric-unit">人</span></div>
+                        <div class="metric-label">校园招聘规模</div>
+                    </div>
+                </div>
+
+                <!-- 关于我 -->
+                <section class="content-section animate-in delay-1">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-user"></i></div>
+                        <h2 class="section-title">专业概览</h2>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            拥有<span class="highlight">17年人力资源</span>从业经验的资深HR专家，深耕<span class="highlight-accent">高科技、互联网及金融科技</span>领域，在组织搭建、关键岗位招聘、招聘体系智能化运营及业务型HRBP等方向积累了丰富的实战经验。
+                        </p>
+                        <p>
+                            擅长以<span class="highlight">数据驱动</span>的方式解决企业在业务高速发展中的组织架构、关键人才获取及招聘体系优化问题。尤其在业务扩张阶段，能够快速建立人才供应链，通过<span class="highlight-accent">人才Mapping</span>与行业调研精准定位目标人选，推动组织架构优化与招聘体系智能化升级。
+                        </p>
+                        <p>
+                            对互联网、高科技、金融科技等行业的人才市场有着深刻洞察，熟悉研发、测试、平台架构、AI算法等核心岗位的人才分布与竞争格局。具备从0到1搭建技术团队、主导组织重构、实现招聘数字化转型等全方位能力。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 工作经历 -->
+                <section class="content-section animate-in delay-2">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+                        <h2 class="section-title">工作经历</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <div class="timeline-title">招聘COE & 业务HRBP</div>
+                                    <div class="timeline-company">某大型科技集团（人工智能与云计算方向）</div>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span><i class="far fa-calendar"></i> 2022.10 - 至今</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 上海</span>
+                            </div>
+                            <div class="timeline-content">
+                                <ul>
+                                    <li>深度支持集团人工智能及云计算业务板块的团队搭建，参与核心算法、大模型架构、系统设计等关键岗位招聘，累计完成<span class="highlight-accent">20+个高端岗位</span>成功交付</li>
+                                    <li>与业务侧共同梳理关键岗位人才画像，建立AI人才竞争力评估模型，为业务扩张阶段制定精准的人才获取标准与招聘策略</li>
+                                    <li>主导招聘"供应链"机制与人才前置储备体系建设，搭建关键岗位人才Mapping库，通过AI辅助筛选与数据分析提升关键岗位招聘效率</li>
+                                    <li>深度参与业务团队组织协同与人才规划，支持业务快速扩张阶段的技术团队组建与组织架构优化，推动跨部门协作效率提升</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <div class="timeline-title">人力资源总监</div>
+                                    <div class="timeline-company">盛业信息科技（6069.HK）— 金融科技上市公司</div>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span><i class="far fa-calendar"></i> 2016.06 - 2022.08</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 深圳</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p style="font-weight: 600; color: var(--primary); margin-bottom: 8px;">组织架构与关键人才招聘</p>
+                                <ul>
+                                    <li>在公司平台化转型与技术战略升级阶段，主导技术组织架构重构与核心人才招聘，完成<span class="highlight-accent">9个城市</span>落地、<span class="highlight-accent">200+人技术团队</span>从0到1搭建，支撑公司从传统金融向Java技术体系与金融科技平台成功转型</li>
+                                    <li>负责CTO、CIO、Java架构师、技术总监、产品总监等关键岗位招聘，通过深度人才Mapping与行业调研，快速引进核心技术人才</li>
+                                    <li>建立关键人才梯队与动态盘点机制，为业务快速发展提供持续的人才储备与继任计划支持</li>
+                                </ul>
+                                <p style="font-weight: 600; color: var(--primary); margin: 16px 0 8px;">招聘体系智能化运营</p>
+                                <ul>
+                                    <li>主导企业人才库体系建设，累计沉淀<span class="highlight-accent">3,300+</span>活跃高质量人才资源，通过猎头合作网络优化与人才运营，提升关键岗位招聘效率</li>
+                                    <li>推动<span class="highlight">Moka招聘管理系统</span>上线，实现招聘全流程线上化、数据化管理，统一招聘标准与流程，提升协同效率</li>
+                                    <li>优化招聘渠道结构，建立数据化招聘分析体系，实现招聘成本同比降低<span class="highlight-accent">15%</span>，关键岗位招聘周期缩短<span class="highlight-accent">20%</span></li>
+                                </ul>
+                                <p style="font-weight: 600; color: var(--primary); margin: 16px 0 8px;">HRBP与组织支持</p>
+                                <ul>
+                                    <li>深入参与业务团队组织架构设计、岗位体系设计、人才发展路径规划，推动组织能力与业务战略对齐</li>
+                                    <li>与业务侧共同制定核心岗位配置方案、团队稳定性策略与组织协同机制，支撑业务持续高速增长</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <div class="timeline-title">高级猎头顾问</div>
+                                    <div class="timeline-company">上海韦为企管理咨询</div>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span><i class="far fa-calendar"></i> 2015.03 - 2016.06</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 上海</span>
+                            </div>
+                            <div class="timeline-content">
+                                <ul>
+                                    <li>专注互联网、高科技行业高端人才招聘，成功交付多个技术总监、架构师、产品负责人等核心岗位</li>
+                                    <li>开展深度行业人才Mapping与竞争调研，为多家科技企业提供精准人才寻访与战略招聘服务</li>
+                                    <li>个人年度业绩位居团队TOP，年度业绩<span class="highlight-accent">60万+</span>，建立高质量候选人与客户网络</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <div class="timeline-title">招聘主管</div>
+                                    <div class="timeline-company">深圳大疆创新科技（DJI）</div>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span><i class="far fa-calendar"></i> 2012.01 - 2015.03</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 深圳</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p style="margin-bottom: 12px; color: var(--text-light); font-style: italic;">
+                                    在Phantom系列无人机产品爆发期加入，亲历公司从300人快速扩张至3,600+人，营收3年增长80倍、估值达100亿美元的超高速发展阶段。
+                                </p>
+                                <ul>
+                                    <li>主导公司快速扩张期的核心人才引进，通过深度参与核心算法、硬件架构、结构工程等关键岗位招聘，完成<span class="highlight-accent">80-100名</span>核心人才招聘</li>
+                                    <li>在无人机与机器人技术人才引进阶段，主导内部研发团队组建与关键人才获取，积累了丰富的人才Mapping与行业调研实战经验</li>
+                                    <li>建立行业人才Mapping数据库与竞争情报体系，提升关键岗位招聘效率与精准度</li>
+                                    <li>主导校园招聘体系搭建与渠道优化，支持公司研发团队规模化扩张与人才梯队建设</li>
+                                </ul>
+                                <span class="achievement-tag"><i class="fas fa-trophy" style="margin-right: 4px;"></i>超高速成长企业招聘经验</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <div class="timeline-title">人力资源专员 / 主管</div>
+                                    <div class="timeline-company">富士康科技集团（601138）</div>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span><i class="far fa-calendar"></i> 2008.07 - 2011.10</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 深圳</span>
+                            </div>
+                            <div class="timeline-content">
+                                <ul>
+                                    <li>负责多个事业群的招聘运营管理，累计支持校园招聘<span class="highlight-accent">1,900人</span>规模，建立标准化招聘流程</li>
+                                    <li>负责招聘全流程执行、职位发布、渠道管理与招聘运营支持，积累了丰富的规模化招聘实战经验</li>
+                                    <li>在大型制造企业标准化招聘体系中，推动大规模招聘运营效率提升与组织协同优化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 项目经历 -->
+                <section class="content-section animate-in delay-3">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h2 class="section-title">重点项目</h2>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">人才梯队模型与晋升机制建设项目</div>
+                            <span style="font-size: 13px; color: var(--text-light);">2020.06 - 2021.06</span>
+                        </div>
+                        <div class="project-role">项目负责人</div>
+                        <div class="project-desc">
+                            主导设计并实施公司人才梯队模型、人才发展路径与晋升机制建设。通过建立分层分类的人才盘点体系与胜任力模型，系统化识别高潜人才，优化内部晋升流程。项目实施后，关键岗位内部晋升率提升，人才流失率显著下降，项目成功率提升<span class="highlight-accent">30%</span>，为业务持续扩张提供坚实的人才支撑。
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">行业人才库与智能招聘系统建设项目</div>
+                            <span style="font-size: 13px; color: var(--text-light);">2018.05 - 2020.05</span>
+                        </div>
+                        <div class="project-role">项目负责人 & 系统运营负责人</div>
+                        <div class="project-desc">
+                            主导企业人才库体系从零到一建设，累计沉淀<span class="highlight-accent">3,300+</span>活跃高质量人才资源。通过猎头合作网络优化与人才生命周期管理，建立智能化人才运营机制。同时推动Moka ATS系统上线，实现招聘流程数字化。项目有效提升关键岗位招聘效率，招聘成本优化<span class="highlight-accent">15%</span>，成为公司招聘数字化转型的重要里程碑。
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">技术组织重构与核心团队搭建项目</div>
+                            <span style="font-size: 13px; color: var(--text-light);">2017.03 - 2017.12</span>
+                        </div>
+                        <div class="project-role">项目核心成员</div>
+                        <div class="project-desc">
+                            在公司业务平台化转型关键期，深度参与技术组织架构重构与核心人才招聘。完成<span class="highlight-accent">9个城市</span>落地、<span class="highlight-accent">200人</span>技术团队快速搭建，成功引进CTO及核心技术骨干，支撑公司从传统金融向Java技术体系与金融科技平台成功转型，为后续业务高速增长奠定组织与人才基础。
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 教育背景 -->
+                <section class="content-section animate-in delay-4">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h2 class="section-title">教育背景</h2>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-icon"><i class="fas fa-university"></i></div>
+                        <div class="edu-info">
+                            <h4>华中科技大学 <span class="edu-badge">985 / 211 / 双一流</span></h4>
+                            <p>工商管理硕士（MBA）· 2016.09 - 2019.06</p>
+                            <p style="margin-top: 4px; font-size: 13px;">系统学习战略管理、组织行为学与人力资源管理体系，具备扎实的商业管理理论基础</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="edu-info">
+                            <h4>武汉职业技术学院</h4>
+                            <p>机电一体化 · 大专 · 2005.09 - 2008.06</p>
+                            <p style="margin-top: 4px; font-size: 13px;">工科背景赋予对技术团队与研发人才的深刻理解与沟通能力</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 专业技能 -->
+                <section class="content-section animate-in delay-4">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-cogs"></i></div>
+                        <h2 class="section-title">专业技能</h2>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><span class="highlight">组织诊断与搭建：</span>具备从0到1搭建组织架构、设计岗位体系、优化人才结构的能力，熟悉高速成长型企业的组织演进路径</li>
+                            <li><span class="highlight">高端人才猎聘：</span>精通人才Mapping方法论，擅长CTO、架构师、技术总监、产品总监等高端岗位的精准寻访与评估</li>
+                            <li><span class="highlight">招聘体系运营：</span>具备ATS系统选型与运营经验，擅长招聘流程优化、渠道管理、数据分析与成本管控</li>
+                            <li><span class="highlight">HRBP业务协同：</span>深度理解业务战略，能够将人力资源策略与业务目标对齐，推动组织效能提升</li>
+                            <li><span class="highlight">人才梯队建设：</span>熟悉人才盘点、胜任力建模、继任计划与人才发展路径设计</li>
+                            <li><span class="highlight">数据驱动HR：</span>善于运用招聘数据、人效数据进行分析与决策，推动HR运营数字化</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="tel:18028766227" class="footer-link" title="电话联系"><i class="fas fa-phone"></i></a>
+            <a href="mailto:05050197@163.com" class="footer-link" title="发送邮件"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="footer-link" title="微信: 18028766227" onclick="alert('微信: 18028766227'); return false;"><i class="fab fa-weixin"></i></a>
+        </div>
+        <p>© 2024 胡小江 · 资深人力资源总监 · 以数据和科技驱动人才战略</p>
+        <p style="margin-top: 8px; font-size: 12px;">本简历采用 AI 辅助设计 · 数据驱动呈现</p>
+    </footer>
+
+    <script>
+        // 生成AI粒子背景
+        function createParticles() {
+            const bg = document.getElementById('aiBg');
+            const count = 30;
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'ai-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (6 + Math.random() * 6) + 's';
+                bg.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // 滚动触发动画
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.skill-bar');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('animate');
+                }
+            });
+        }
+
+        // 初始触发
+        setTimeout(() => {
+            document.querySelectorAll('.skill-bar').forEach(el => el.classList.add('animate'));
+        }, 500);
+
+        // 滚动监听
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+
+        // 添加打印支持
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
